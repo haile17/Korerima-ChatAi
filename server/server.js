@@ -9,7 +9,7 @@ const configuration = new Configuration({
     apikey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(Configuration);
+const openai = new OpenAIApi(configuration);
 
 const app = express();
 app.use(cors());
@@ -27,7 +27,7 @@ app.post('/', async (req, res) => {
 
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `$(prompt)`,
+            prompt: `${prompt}`,
             temperature: 0.7,
             max_tokens: 3000,
             top_p: 1,
@@ -40,7 +40,7 @@ app.post('/', async (req, res) => {
         })
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error })
+        res.status(500).send(error || 'something went wrong');
     }
 })
 
