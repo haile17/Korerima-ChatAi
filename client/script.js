@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-  const response = await fetch('https://korerima-chatai-p126.onrender.com', {
+  const response = await fetch('https://korerima-chatai.onrender.com', {
     method: 'POST',
         headers: {
             'Content-Type': 'application/json',
