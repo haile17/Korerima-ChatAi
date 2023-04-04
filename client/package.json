@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.1.0"
   }
 }
